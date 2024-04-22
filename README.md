@@ -5,6 +5,9 @@
 - ระบบค้นหารูปภาพด้วย API
 
 ## Task Management
+[StackBlitz](https://stackblitz.com/~/github.com/lazy-devil/basic-react-phase3)
+
+Running application
 ```js
 cd task-management/react-task-app/
 npm i & npm run dev
