@@ -2,17 +2,25 @@ import './App.css'
 import Header from './components/header-component/header-component'
 import AddForm from './components/add-form-component/add-form-component'
 import Item from './components/item-component/item-component'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { ItemType } from './common/global'
 
 function App() {
-  const [tasks, setTasks] = useState<ItemType[]>([
-    { id: '1', title: 'แก้บั๊คโปรแกรม' },
-    { id: '2', title: 'คู่มือการใช้งานโปรแกรม' },
-    { id: '3', title: 'กดเงินที่ธนาคาร' }
-  ])
+  const localTask: any = JSON.parse(localStorage.getItem('tasks') as string)
+  const [tasks, setTasks] = useState<ItemType[]>(
+    localTask || [
+      { id: '1', title: 'แก้บั๊คโปรแกรม' },
+      { id: '2', title: 'คู่มือการใช้งานโปรแกรม' },
+      { id: '3', title: 'กดเงินที่ธนาคาร' }
+    ])
   const [title, setTitle] = useState<string>('')
   const [editId, setEditId] = useState<string | null>(null)
+  const [theme, setTheme] = useState<string | null>('light')
+
+  useEffect(() => {
+    //console.log('เรียกใช้งาน useEffect ใน App Component')
+    localStorage.setItem('tasks', JSON.stringify(tasks))
+  }, [tasks])
 
   const deleteTask = (id: string) => {
     const result = tasks.filter(item => item.id != id)
@@ -45,8 +53,8 @@ function App() {
   }
 
   return (
-    <div className='App'>
-      <Header />
+    <div className={`App ${theme}`}>
+      <Header theme={theme} setTheme={setTheme} />
       <div className='container'>
         <AddForm title={title} setTitle={setTitle} saveTask={saveTask} editId={editId} />
         <section>

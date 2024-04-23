@@ -26,4 +26,6 @@ header {
     margin-left: 10px;
 }
 
-/* .icon {} */
+.theme-container .icon {
+    font-size: 15px;
+}
