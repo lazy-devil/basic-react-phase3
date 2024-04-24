@@ -1,4 +1,4 @@
-const cartReducer = (state: any, action: any) => {
+const cartReducer = (state: any, _action: any) => {
     // กระบวนการจัดการ state ผ่าน action
     return { ...state }
 }

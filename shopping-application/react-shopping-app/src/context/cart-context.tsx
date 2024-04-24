@@ -14,7 +14,7 @@ const CartContext = createContext(initState)
 
 // การสร้าง Provider
 export const CartProvider = ({ children }: any) => {
-    const [state, dispatch] = useReducer(cartReducer, initState)
+    const [state, _dispatch] = useReducer(cartReducer, initState)
     return (
         <CartContext.Provider value={{ ...state }}>
             {children}
