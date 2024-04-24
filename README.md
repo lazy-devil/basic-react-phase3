@@ -14,7 +14,13 @@ npm i & npm run dev
 ```
 
 ## Blog Application
-`Pending...`
+[StackBlitz](https://stackblitz.com/~/github.com/lazy-devil/basic-react-phase3)
+
+Running application
+```js
+cd react-blog-app/react-blog-app/
+npm i & npm run dev
+```
 
 ## Shopping Application
 `Pending...`
