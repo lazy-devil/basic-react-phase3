@@ -18,7 +18,7 @@ npm i & npm run dev
 
 Running application
 ```js
-cd react-blog-app/react-blog-app/
+cd blog-application/react-blog-app/
 npm i & npm run dev
 ```
 
