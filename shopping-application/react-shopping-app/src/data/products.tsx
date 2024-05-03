@@ -6,14 +6,14 @@ const products: ProductType[] = [
         name: "หมวก",
         image: "src/assets/images/product1.png",
         price: 2000,
-        quantity: 1
+        quantity: 3
     },
     {
         id: 2,
         name: "หูฟัง",
         image: "src/assets/images/product2.jpg",
         price: 1500,
-        quantity: 1
+        quantity: 2
     },
     {
         id: 3,
