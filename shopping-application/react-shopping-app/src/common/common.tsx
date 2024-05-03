@@ -10,5 +10,6 @@ export type StateType = {
     products: ProductType[],
     total: number,
     amount: number,
-    formatMoney: any
+    formatMoney: any,
+    removeItem: any
 }

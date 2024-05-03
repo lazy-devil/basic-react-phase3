@@ -16,5 +16,12 @@ const cartReducer = (state: any, action: any) => {
             )
         return { ...state, total, amount }
     }
+    if (action.type == 'REMOVE') {
+
+        return {
+            ...state,
+            products: state.products.filter((item: ProductType) => item.id != action.payload)
+        }
+    }
 }
 export default cartReducer

@@ -7,7 +7,8 @@ const initState: StateType = {
     products: products,
     total: 0,
     amount: 0,
-    formatMoney: (v: any) => v
+    formatMoney: null,
+    removeItem: null
 }
 
 // การสร้าง Context
@@ -19,11 +20,14 @@ export const CartProvider = ({ children }: any) => {
     function formatMoney(money: any) {
         return money.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
     }
+    function removeItem(id: number) {
+        dispatch({ type: 'REMOVE', payload: id })
+    }
     useEffect(() => {
         dispatch({ type: "CALCULATE_TOTAL" })
     }, [state.products])
     return (
-        <CartContext.Provider value={{ ...state, formatMoney }}>
+        <CartContext.Provider value={{ ...state, formatMoney, removeItem }}>
             {children}
         </CartContext.Provider>
     )
