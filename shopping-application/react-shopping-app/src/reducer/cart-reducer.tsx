@@ -1,6 +1,6 @@
-import { ProductType, StateType } from "../common/common"
+import { ProductType } from "../common/common"
 
-const cartReducer = (state: StateType, action: any) => {
+const cartReducer = (state: any, action: any) => {
     // กระบวนการจัดการ state ผ่าน action
 
     if (action.type == 'CALCULATE_TOTAL') {
