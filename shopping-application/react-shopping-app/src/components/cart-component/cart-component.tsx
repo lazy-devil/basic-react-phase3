@@ -4,9 +4,10 @@ import Item from '../item-component/item-component'
 import './cart-component.css'
 
 export default function Cart() {
-    const { products } = useCart()
+    const { products, total, formatMoney } = useCart()
     return (
-        <div>
+        <div className='cart'>
+            <h1 style={{ textAlign: 'center' }}>ยอดชำระเงินรวม : {formatMoney(total)} บาท</h1>
             {products.map((data: ProductType) => {
                 return <Item key={data.id} {...data} />
             })}
