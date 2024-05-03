@@ -31,5 +31,14 @@ cd shopping-application/react-shopping-app/
 npm i & npm run dev
 ```
 
+## Accordion Application
+[StackBlitz](https://stackblitz.com/~/github.com/lazy-devil/basic-react-phase3)
+
+Running application
+```js
+cd accordion-application/react-accordion-app/
+npm i & npm run dev
+```
+
 ## ระบบค้นหารูปภาพด้วย API
 `Pending...`
