@@ -17,10 +17,33 @@ const cartReducer = (state: any, action: any) => {
         return { ...state, total, amount }
     }
     if (action.type == 'REMOVE') {
-
         return {
             ...state,
             products: state.products.filter((item: ProductType) => item.id != action.payload)
+        }
+    }
+    if (action.type == 'ADD') {
+        let updateProduct = state.products.map((item: any) => {
+            if (item.id == action.payload) {
+                return { ...item, quantity: item.quantity + 1 }
+            }
+            return item
+        })
+        return {
+            ...state,
+            products: updateProduct
+        }
+    }
+    if (action.type == 'SUBTRACT') {
+        let updateProduct = state.products.map((item: any) => {
+            if (item.id == action.payload) {
+                return { ...item, quantity: item.quantity - 1 }
+            }
+            return item
+        }).filter((item: ProductType) => item.quantity != 0)
+        return {
+            ...state,
+            products: updateProduct
         }
     }
 }

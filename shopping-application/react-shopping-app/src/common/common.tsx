@@ -11,5 +11,7 @@ export type StateType = {
     total: number,
     amount: number,
     formatMoney: any,
-    removeItem: any
+    removeItem: any,
+    addQuantity: any,
+    subtractQuantity: any,
 }
