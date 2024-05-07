@@ -5,7 +5,6 @@ import Picture from './components/picture-component/picture-component'
 function App() {
   const [word, setWord] = useState('')
   const [photos, setPhotos] = useState([])
-  const key = 'xHcwZ-TEcAjSZG3ULrN607JZupCRW1IVoK6agw-CYz8'
   function searchImage(e: React.FormEvent) {
     e.preventDefault()
     if (!word) {
@@ -16,8 +15,7 @@ function App() {
   }
 
   async function fetchImageFromApi() {
-    // https://api.unsplash.com/search/photos?page=1&query=office&client_id=xHcwZ-TEcAjSZG3ULrN607JZupCRW1IVoK6agw-CYz8
-    const url = `https://api.unsplash.com/search/photos?page=1&per_page=15&query=${word}&client_id=${key}`
+    const url = `${import.meta.env.VITE_API_URL}?query=${word}&client_id=${import.meta.env.VITE_API_KEY}&page=1&per_page=15`
     const res = await fetch(url)
     const data = await res.json()
     const result = data.results
