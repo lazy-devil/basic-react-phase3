@@ -41,4 +41,10 @@ npm i & npm run dev
 ```
 
 ## ระบบค้นหารูปภาพด้วย API
-`Pending...`
+[StackBlitz](https://stackblitz.com/~/github.com/lazy-devil/basic-react-phase3)
+
+Running application
+```js
+cd image-search-application/react-image-search-app/
+npm i & npm run dev
+```
